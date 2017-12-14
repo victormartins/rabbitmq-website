@@ -1,3 +1,5 @@
+# vim:ft=apache:
+
     ServerName www.rabbitmq.com
     ServerAlias *.haas-40.pez.pivotal.io
     ServerAdmin postmaster@rabbitmq.com
@@ -54,21 +56,25 @@
 
     ServerSignature On
     <Directory /srv/www.rabbitmq.com/site>
+        Require all granted
         Options -Indexes
     </Directory>
     <Directory /home/rabbitmq/extras/releases>
+        Require all granted
         Options +Indexes
         IndexOptions FancyIndexing HTMLTable SuppressHTMLPreamble VersionSort IgnoreClient SuppressDescription XHTML
         HeaderName /templates/index-header.html
         ReadmeName /templates/index-footer.html
     </Directory>
     <Directory /home/rabbitmq/extras/nightlies>
+        Require all granted
         Options +Indexes
         IndexOptions FancyIndexing HTMLTable SuppressHTMLPreamble VersionSort IgnoreClient SuppressDescription XHTML
         HeaderName /templates/index-header.html
         ReadmeName /templates/index-footer.html
     </Directory>
     <Directory /home/rabbitmq/extras/community-plugins>
+        Require all granted
         Options +Indexes
         IndexOptions FancyIndexing HTMLTable SuppressHTMLPreamble VersionSort IgnoreClient SuppressDescription XHTML
         HeaderName /templates/index-header.html
